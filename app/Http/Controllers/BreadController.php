@@ -19,7 +19,7 @@ class BreadController extends Controller
         if($response->status()==200){
             $output['result']['success'] =  true;
             $output['result']['data'] = $response->collect();
-            $output['result']['message'] = "Category Created Succefully";
+            $output['result']['message'] = "Category Returened Succefully";
         }
         return $output;
     }
@@ -55,7 +55,7 @@ class BreadController extends Controller
             if($response->status()==200){
                 $output['result']['success'] =  true;
                 $output['result']['data'] = $response->collect();
-                $output['result']['message'] = "Category Created Succefully";
+                $output['result']['message'] = "Search Returned Succefully";
             }else{
                 $output['result']['success'] =  false;
                 $output['result']['data'] = $response;
@@ -95,7 +95,7 @@ class BreadController extends Controller
             if(sizeof($imagesArray)>0){
                 $output['result']['success'] =  true;
                 $output['result']['data'] = $imagesArray;
-                $output['result']['message'] = "Category Created Succefully";
+                $output['result']['message'] = "Images Returned Succefully";
             }
           
         }else{
@@ -132,7 +132,7 @@ class BreadController extends Controller
         if(sizeof($Populared_List)>0){
             $output['result']['success'] =  true;
             $output['result']['data']['list'] = $Populared_List;
-            $output['result']['message'] = "Category Created Succefully";
+            $output['result']['message'] = "Populared Beerds Returned Succefully";
         }
         return $output;
     }
