@@ -11,7 +11,6 @@ class BreadController extends Controller
     // curl --location --request GET 'https://api.thecatapi.com/v1/breeds?limit=10&page=0' \
 
     public $baseUr="https://api.thecatapi.com/v1/";
-
     public function index(){
         $response = Http::withHeaders([
             'x-api-key'=>env('api_auth'),
@@ -24,11 +23,8 @@ class BreadController extends Controller
         return $output;
     }
 
-
-
     public function updateRank($beerd_id){
         $beerd =PopularSearchedBeerds::where('beerd_id' , $beerd_id)->first();
-
         if($beerd){
             $beerd =PopularSearchedBeerds::where('beerd_id' , $beerd_id)->update([
                 'search_count'=>$beerd['search_count']+1,
